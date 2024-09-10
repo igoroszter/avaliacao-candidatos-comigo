@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL="postgresql://postgres:admin1234@localhost:5432/bancotickets?schema=public"
+      - SECRET_KEY=secretK
+    depends_on:
+      - db
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin1234
+      POSTGRES_DB: bancotickets
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:

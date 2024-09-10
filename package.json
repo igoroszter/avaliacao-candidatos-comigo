@@ -1,0 +1,27 @@
+{
+  "name": "avaliacao-candidatos-comigo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@prisma/client": "^5.19.1",
+    "avaliacao-candidatos-comigo": "file:",
+    "bcryptjs": "^2.4.3",
+    "express": "^3.21.2",
+    "express-jwt": "^8.4.1",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "prisma": "^5.19.1",
+    "supertest": "^7.0.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "jest"
+  }
+}

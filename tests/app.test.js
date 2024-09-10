@@ -1,8 +1,6 @@
 const request = require('supertest');
 const express = require('express');
 const { PrismaClient } = require('@prisma/client');
-const jwt = require('jsonwebtoken');
-
 const prisma = new PrismaClient();
 const app = express();
 app.use(express.json());
@@ -29,11 +27,11 @@ app.post('/tickets', autenticarJWT, async (req, res) => {
     }
 
     if (priority === undefined || typeof priority !== 'number') {
-        erros.push('Prioridade obrigatória (deve ser um número.)');
+        erros.push('Prioridade obrigatória (deve ser um número).');
     }
 
     if (!colaboradorId) {
-        erros.push('O ID do colaborador obrigatório.');
+        erros.push('ID do colaborador obrigatório.');
     }
 
     if (erros.length > 0) {
